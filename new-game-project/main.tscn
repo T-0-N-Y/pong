@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://djj81k5qh3db5"]
+[gd_scene load_steps=11 format=3 uid="uid://djj81k5qh3db5"]
 
 [ext_resource type="Texture2D" uid="uid://c5fuo21oi8ad3" path="res://assets/download.png" id="1_x007o"]
 [ext_resource type="Texture2D" uid="uid://bxhkhwuyi0o6a" path="res://assets/Goat.jpg" id="2_q83l1"]
@@ -23,6 +23,9 @@ size = Vector2(14.8232, 175.157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54aa8"]
 size = Vector2(15.4809, 175.462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32sca"]
+size = Vector2(7.23484, 8.25345)
 
 [node name="main" type="Sprite2D"]
 texture_filter = 1
@@ -107,12 +110,10 @@ collision_layer = 2
 
 [node name="top" type="CollisionShape2D" parent="border"]
 position = Vector2(126.829, -0.567592)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_43cnu")
 
 [node name="bottom" type="CollisionShape2D" parent="border"]
 position = Vector2(128.406, 193.759)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bs3vd")
 
 [node name="scoreLeft" type="Area2D" parent="."]
@@ -120,7 +121,6 @@ position = Vector2(-4.38475, 10.3932)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scoreLeft"]
 position = Vector2(-2.58839, 86.3555)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vk4sq")
 
 [node name="scoreRight" type="Area2D" parent="."]
@@ -128,5 +128,15 @@ position = Vector2(258.262, 7.03071)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scoreRight"]
 position = Vector2(2.25955, 89.5652)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_54aa8")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.008, 0.008)
+texture = ExtResource("2_q83l1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.109619, -0.152842)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_32sca")
