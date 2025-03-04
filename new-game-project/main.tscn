@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://djj81k5qh3db5"]
+
+[ext_resource type="Texture2D" uid="uid://c5fuo21oi8ad3" path="res://assets/download.png" id="1_x007o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgaqh"]
+size = Vector2(8, 45.1022)
+
+[node name="main" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(1.5, 1.419)
+texture = ExtResource("1_x007o")
+centered = false
+
+[node name="player" type="StaticBody2D" parent="."]
+position = Vector2(12, 100)
+
+[node name="ColorRect" type="ColorRect" parent="player"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_right = 8.0
+offset_bottom = 22.5
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(4, 0.704722)
+shape = SubResource("RectangleShape2D_hgaqh")
