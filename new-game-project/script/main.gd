@@ -1,7 +1,7 @@
 extends Sprite2D
 
 var score := [0, 0] #array to keep track of score
-const PADDLE_SPEED : int = 500 #paddle speed
+const PADDLE_SPEED : int = 100 #paddle speed
 
 # # Called when the node enters the scene tree for the first time.
 # func _ready() -> void:

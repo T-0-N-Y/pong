@@ -19,3 +19,6 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_down"):
 		#get_parent allows me to see var in the parent node
 		position.y += get_parent().PADDLE_SPEED * delta
+
+	# limit paddle movement so it doesnt go bye bye
+	position.y = clamp(position.y, pHeight / 2, 100)
