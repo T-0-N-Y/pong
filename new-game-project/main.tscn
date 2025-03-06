@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://djj81k5qh3db5"]
 
-[ext_resource type="Texture2D" uid="uid://c5fuo21oi8ad3" path="res://assets/download.png" id="1_x007o"]
+[ext_resource type="Texture2D" uid="uid://ct1bwp1h0mkj2" path="res://assets/pong_background.png" id="1_e42ov"]
 [ext_resource type="Texture2D" uid="uid://bat6xljlcjg4" path="res://assets/480073518_1375789236884207_6784987757028887989_n.jpg" id="2_ixwp5"]
 [ext_resource type="Texture2D" uid="uid://bxhkhwuyi0o6a" path="res://assets/Goat.jpg" id="2_q83l1"]
 [ext_resource type="FontFile" uid="uid://dyfi8ejwt236c" path="res://assets/SHPinscher-Regular.otf" id="4_5u8lt"]
@@ -32,7 +32,7 @@ size = Vector2(7.23484, 8.25345)
 [node name="main" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4.56126, 3.27136)
-texture = ExtResource("1_x007o")
+texture = ExtResource("1_e42ov")
 centered = false
 
 [node name="Player" type="StaticBody2D" parent="."]
