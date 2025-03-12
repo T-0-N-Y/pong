@@ -14,6 +14,14 @@ func new_ball():
 	# randomise starting position
 	position.x = winSize.x / 2
 	position.y = randi_range(35 , 160)
+	speed = START_SPEED
+	dir = random_direction()
+
+func random_direction():
+	var new_dir := Vector2()
+	new_dir.x = [1, -1].pick_random()
+	new_dir.y = randf_range(-1, 1)
+
 
 
 # const SPEED = 300.0
