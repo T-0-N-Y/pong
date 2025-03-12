@@ -2,7 +2,7 @@ extends StaticBody2D
 
 
 var winHeight : int
-var pHeight : int
+var pHeight : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,4 +21,5 @@ func _process(delta):
 		position.y += get_parent().PADDLE_SPEED * delta
 
 	# limit paddle movement so it doesnt go bye bye
-	position.y = clamp(position.y, pHeight / 2, 100)
+	position.y = clamp(position.y, 29, 164)
+	# print(position.y)
