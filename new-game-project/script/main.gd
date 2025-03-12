@@ -14,5 +14,9 @@ const PADDLE_SPEED : int = 100 #paddle speed
 # 	pass
 
 
+
+
+
+
 func _on_timer_timeout():
 	$ballReal.new_ball()

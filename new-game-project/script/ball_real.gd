@@ -10,13 +10,15 @@ var dir : Vector2
 
 func _ready():
 	winSize = get_viewport_rect().size
+	print(winSize)
 
 func new_ball():
 	# randomise starting position
 	position.x = winSize.x / 2
-	position.y = randi_range(160 , 35)
+	position.y = randi_range(200 , winSize.y - 200)
 	speed = START_SPEED
 	dir = random_direction()
+	#print(winSize)
 
 func _physics_process(delta):
 	move_and_collide(dir * speed * delta)

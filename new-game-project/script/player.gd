@@ -22,4 +22,4 @@ func _process(delta):
 
 	# limit paddle movement so it doesnt go bye bye
 	position.y = clamp(position.y, 29, 164)
-	# print(position.y)
+	#print(position.y)
