@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://djj81k5qh3db5"]
+[gd_scene load_steps=16 format=3 uid="uid://djj81k5qh3db5"]
 
 [ext_resource type="Texture2D" uid="uid://ct1bwp1h0mkj2" path="res://assets/pong_background.png" id="1_e42ov"]
 [ext_resource type="Texture2D" uid="uid://bat6xljlcjg4" path="res://assets/480073518_1375789236884207_6784987757028887989_n.jpg" id="2_ixwp5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxhkhwuyi0o6a" path="res://assets/Goat.jpg" id="2_q83l1"]
 [ext_resource type="Script" path="res://script/player.gd" id="3_gjsam"]
 [ext_resource type="FontFile" uid="uid://dyfi8ejwt236c" path="res://assets/SHPinscher-Regular.otf" id="4_5u8lt"]
+[ext_resource type="Script" path="res://script/ball_real_not_fake.gd" id="6_uslor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw1be"]
 size = Vector2(5.17678, 40.0445)
@@ -143,14 +144,15 @@ position = Vector2(258.262, 7.03071)
 position = Vector2(2.25955, 89.5652)
 shape = SubResource("RectangleShape2D_54aa8")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="ballReal" type="CharacterBody2D" parent="."]
 position = Vector2(128, 99.5)
+script = ExtResource("6_uslor")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="ballReal"]
 scale = Vector2(0.008, 0.008)
 texture = ExtResource("2_q83l1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ballReal"]
 position = Vector2(0.109619, -0.152842)
 shape = SubResource("RectangleShape2D_32sca")
 
@@ -181,3 +183,5 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
