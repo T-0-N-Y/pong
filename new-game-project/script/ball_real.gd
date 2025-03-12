@@ -14,7 +14,7 @@ func _ready():
 func new_ball():
 	# randomise starting position
 	position.x = winSize.x / 2
-	position.y = randi_range(35 , 160)
+	position.y = randi_range(160 , 35)
 	speed = START_SPEED
 	dir = random_direction()
 
