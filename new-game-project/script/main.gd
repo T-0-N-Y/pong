@@ -5,7 +5,7 @@ const PADDLE_SPEED : int = 100 #paddle speed
 
 func _on_timer_timeout():
 	print("pls trigger")
-	$ball.new_ball()
+	$ballReal.new_ball()
 
 # # Called when the node enters the scene tree for the first time.
 # func _ready() -> void:
