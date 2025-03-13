@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 var winSize : Vector2
-const START_SPEED : int = 100
-const accel : int = 10
+const START_SPEED : int = 250
+const accel : int = 20
 var speed : int
 var dir : Vector2
 
