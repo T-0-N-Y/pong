@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var winSize : Vector2
-const START_SPEED : int = 10
+const START_SPEED : int = 500
 const accel : int = 50
 var speed : int
 var dir : Vector2
@@ -11,7 +11,7 @@ func _ready():
 	#print("hi")
 
 func new_ball():
-	#print("hi")
+	print("hi")
 	position.x = winSize.x / 2
 	position.y = randi_range(200, winSize.y - 200)
 	speed = START_SPEED
