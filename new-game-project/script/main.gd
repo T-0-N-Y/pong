@@ -13,10 +13,3 @@ const PADDLE_SPEED : int = 100 #paddle speed
 # func _process(delta: float) -> void:
 # 	pass
 
-
-
-
-
-
-func _on_timer_timeout():
-	$ballReal.new_ball()
