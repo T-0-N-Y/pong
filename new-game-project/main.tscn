@@ -66,7 +66,7 @@ scale = Vector2(0.0100484, 0.111668)
 texture = ExtResource("2_ixwp5")
 
 [node name="border" type="StaticBody2D" parent="."]
-collision_layer = 3
+collision_layer = 2
 
 [node name="top" type="CollisionShape2D" parent="border"]
 position = Vector2(126.829, -0.567592)
@@ -92,6 +92,7 @@ shape = SubResource("RectangleShape2D_54aa8")
 
 [node name="ballReal" type="CharacterBody2D" parent="."]
 position = Vector2(128, 99.5)
+collision_mask = 3
 script = ExtResource("6_lvd7t")
 
 [node name="Sprite2D" type="Sprite2D" parent="ballReal"]

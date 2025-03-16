@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 var winSize : Vector2
-const START_SPEED : int = 250
-const accel : int = 20
+const START_SPEED : int = 275
+const accel : int = 30
 var speed : int
 var dir : Vector2
 
@@ -19,8 +19,19 @@ func new_ball():
 	dir = random_direction()
 
 func _physics_process(delta):
-	move_and_collide(dir * speed * delta)
-
+	var collision = move_and_collide(dir * speed * delta)
+	var collider
+	
+	#getting collision
+	if collision:
+		collider = collision.get_collider()
+		#if ball hit paddle
+		if collider == $"../Player" or collider == $"../CPU":
+			speed += accel
+			dir = dir.bounce(collision.get_normal())
+		else:
+			#bounce of wall
+			dir = dir.bounce(collision.get_normal())
 
 func random_direction():
 	var newDir := Vector2()

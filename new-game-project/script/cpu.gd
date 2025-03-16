@@ -22,8 +22,13 @@ func _process(delta: float) -> void:
 	ballPos = $"../ballReal".position
 	dist = position.y - ballPos.y
 	
-	moveBy = get_parent().PADDLE_SPEED * delta
-	print(moveBy)
+	#moveBy = get_parent().PADDLE_SPEED * delta
+	
+	if(abs(dist) > get_parent().PADDLE_SPEED * delta):
+		moveBy = get_parent().PADDLE_SPEED  * delta * (dist / abs(dist))
+	else:
+		moveBy = dist
+	
 	
 	position.y -= moveBy
 	position.y = clamp(position.y, 29, 164)
