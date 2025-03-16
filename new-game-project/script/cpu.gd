@@ -1,32 +1,29 @@
 extends StaticBody2D
 
-var ballPos : Vector2
-var dist : int
-var moveBy : int
+var ballPos :Vector2
+var dist : float
+var moveBy : float
 var winHeight : int
-var pHeight : int
-
-
-
-
+var pHeight : float
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	winHeight = 199
-	pHeight = $Sprite2D.texture.get_height()
+func _ready() -> void:
+	winHeight = 164
+	var sprite = $Sprite2D  # Get the Sprite2D node
+	var sprite_size = sprite.texture.get_size() * sprite.scale  # Get size considering scale 
+	pHeight = sprite_size.y
+	print("Sprite size: ", pHeight)
+	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#move paddle to ball
-	ballPos = $"../ball".position
+func _process(delta: float) -> void:
+	#make paddle move
+	ballPos = $"../ballReal".position
 	dist = position.y - ballPos.y
 	
-	if abs(dist) > get_parent().PADDLE_SPEED * delta:
-		moveBy = get_parent().PADDLE_SPEED * (dist / abs(dist))
-	else:
-		moveBy = dist
-	
-	print (delta)
+	moveBy = get_parent().PADDLE_SPEED * delta
+	print(moveBy)
 	
 	position.y -= moveBy
 	position.y = clamp(position.y, 29, 164)
