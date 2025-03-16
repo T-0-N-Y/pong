@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	#moveBy = get_parent().PADDLE_SPEED * delta
 	
 	if(abs(dist) > get_parent().PADDLE_SPEED * delta):
-		moveBy = get_parent().PADDLE_SPEED  * delta * (dist / abs(dist))
+		moveBy = get_parent().PADDLE_SPEED  * delta * (dist / abs(dist)) 
 	else:
 		moveBy = dist
 	
