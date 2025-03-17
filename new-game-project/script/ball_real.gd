@@ -34,7 +34,7 @@ func _physics_process(delta):
 		else:
 			#bounce of wall
 			dir = dir.bounce(collision.get_normal())
-			$AudioStreamPlayer.play()
+			$AudioStreamPlayer.play()	
 
 func random_direction():
 	var newDir := Vector2()
