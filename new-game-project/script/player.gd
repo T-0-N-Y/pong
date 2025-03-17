@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 var winHeight : int
 var pHeight : float
 
