@@ -22,7 +22,7 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 		$Timer.stop()
 		$loseSound.stream.loop = true
 		$loseSound.play()
-		
+		$HUD/instruction.text = "PRESS SPACE TO PLAY AGAIN"
 func _on_score_right_body_entered(body: Node2D) -> void:
 	if score[0] < 5:
 		score[0] += 1
@@ -35,6 +35,7 @@ func _on_score_right_body_entered(body: Node2D) -> void:
 		$Timer.stop()
 		$winSound.stream.loop = true
 		$winSound.play() 
+		$HUD/instruction.text = "PRESS SPACE TO PLAY AGAIN"
 		
 func _input(event):
 	if game_over and event.is_action_pressed("ui_accept"):  # Space is detected after losing
@@ -43,6 +44,7 @@ func _input(event):
 		game_over = false  # Reset the flag
 		$HUD/result.text = ""
 		$HUD/win.text = ""
+		$HUD/instruction.text = ""
 		$HUD/CPUScore.text = str(score[1])
 		$HUD/playerScore.text = str(score[0])
 		$Timer.start()
