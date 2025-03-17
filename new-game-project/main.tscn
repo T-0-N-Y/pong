@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://djj81k5qh3db5"]
+[gd_scene load_steps=16 format=3 uid="uid://djj81k5qh3db5"]
 
 [ext_resource type="Texture2D" uid="uid://ct1bwp1h0mkj2" path="res://assets/pong_background.png" id="1_e42ov"]
 [ext_resource type="Texture2D" uid="uid://bat6xljlcjg4" path="res://assets/480073518_1375789236884207_6784987757028887989_n.jpg" id="2_ixwp5"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dyfi8ejwt236c" path="res://assets/SHPinscher-Regular.otf" id="4_5u8lt"]
 [ext_resource type="Script" path="res://script/cpu.gd" id="4_gxlq7"]
 [ext_resource type="Script" path="res://script/ball_real.gd" id="6_lvd7t"]
+[ext_resource type="AudioStream" uid="uid://cwg4egfgipui8" path="res://assets/drum-hitnormal.wav" id="8_tm5t1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw1be"]
 size = Vector2(5.17678, 40.0445)
@@ -102,6 +103,9 @@ texture = ExtResource("2_q83l1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ballReal"]
 position = Vector2(0.109619, -0.152842)
 shape = SubResource("RectangleShape2D_32sca")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ballReal"]
+stream = ExtResource("8_tm5t1")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

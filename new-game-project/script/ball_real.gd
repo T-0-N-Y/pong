@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var winSize : Vector2
 const START_SPEED : int = 275
-const accel : int = 30
+const accel : int = 100
 var speed : int
 var dir : Vector2
 const MAX_Y : float = 0.6
@@ -30,9 +30,11 @@ func _physics_process(delta):
 		if collider == $"../Player" or collider == $"../CPU":
 			speed += accel
 			dir = new_direction(collider)
+			$AudioStreamPlayer.play()
 		else:
 			#bounce of wall
 			dir = dir.bounce(collision.get_normal())
+			$AudioStreamPlayer.play()
 
 func random_direction():
 	var newDir := Vector2()

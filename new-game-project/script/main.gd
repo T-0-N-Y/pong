@@ -14,5 +14,5 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 	$Timer.start()
 func _on_score_right_body_entered(body: Node2D) -> void:
 	score[0] += 1
-	$HUD/CPUScore.text = str(score[1])
+	$HUD/playerScore.text = str(score[0])
 	$Timer.start()
