@@ -13,8 +13,6 @@ func _ready() -> void:
 	var sprite_size = sprite.texture.get_size() * sprite.scale  # Get size considering scale 
 	pHeight = sprite_size.y
 	print("Sprite size: ", pHeight)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,13 +20,10 @@ func _process(delta: float) -> void:
 	ballPos = $"../ballReal".position
 	dist = position.y - ballPos.y
 	
-	#moveBy = get_parent().PADDLE_SPEED * delta
-	
 	if(abs(dist) > get_parent().PADDLE_SPEED * delta):
 		moveBy = get_parent().PADDLE_SPEED  * delta * (dist / abs(dist)) 
 	else:
 		moveBy = dist
-	
 	
 	position.y -= moveBy
 	position.y = clamp(position.y, 29, 164)

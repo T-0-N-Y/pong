@@ -8,8 +8,7 @@ var dir : Vector2
 
 func _ready():
 	winSize = get_viewport_rect().size
-	#print("hi")
-
+	
 func new_ball():
 	print("hi")
 	position.x = winSize.x / 2
@@ -19,7 +18,6 @@ func new_ball():
 
 func _physics_process(delta):
 	move_and_collide (dir * speed * delta)
-
 
 func random_direction():
 	var newDir := Vector2()

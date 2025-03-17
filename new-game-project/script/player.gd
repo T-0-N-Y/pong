@@ -22,4 +22,3 @@ func _process(delta: float) -> void:
 
 	# limit paddle movement so it doesnt go bye bye
 	position.y = clamp(position.y, 29, 164)
-	#print(position.y)

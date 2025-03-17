@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var winSize : Vector2
 const START_SPEED : int = 275
 const accel : int = 50
@@ -10,10 +9,8 @@ const MAX_Y : float = 0.6
 
 func _ready():
 	winSize = get_viewport_rect().size
-	#print("hi")
 
 func new_ball():
-	#print("hi")
 	position.x = 126.5
 	position.y = randi_range(40, 155)
 	speed = START_SPEED
