@@ -11,12 +11,12 @@ func _on_timer_timeout():
 		$HUD/win.text = ""
 
 func _on_score_left_body_entered(body: Node2D) -> void:
-	if score[1] < 1:
+	if score[1] < 5:
 		score[1] += 1
 		$HUD/CPUScore.text = str(score[1])
 		$CPUScoreSound.play()
 		$Timer.start()
-	if score[1] == 1:
+	if score[1] == 5:
 		$HUD/result.text = ("YOU LOSE")
 		game_over = true
 		$Timer.stop()
@@ -24,15 +24,17 @@ func _on_score_left_body_entered(body: Node2D) -> void:
 		$loseSound.play()
 		
 func _on_score_right_body_entered(body: Node2D) -> void:
-	if score[0] < 1:
+	if score[0] < 5:
 		score[0] += 1
 		$HUD/playerScore.text = str(score[0])
 		$playerScoreSound.play()
 		$Timer.start()
-	if score[0] == 1:
+	if score[0] == 5:
 		$HUD/win.text = ("YOU WIN")
 		game_over = true
-		$Timer.stop() 
+		$Timer.stop()
+		$winSound.stream.loop = true
+		$winSound.play() 
 		
 func _input(event):
 	if game_over and event.is_action_pressed("ui_accept"):  # Space is detected after losing
@@ -45,3 +47,4 @@ func _input(event):
 		$HUD/playerScore.text = str(score[0])
 		$Timer.start()
 		$loseSound.stop()
+		$winSound.stop()
