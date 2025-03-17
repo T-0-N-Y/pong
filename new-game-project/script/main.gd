@@ -11,6 +11,7 @@ func _on_timer_timeout():
 func _on_score_left_body_entered(body: Node2D) -> void:
 	score[1] += 1
 	$HUD/CPUScore.text = str(score[1])
+	$CPUScoreSound.play()
 	$Timer.start()
 func _on_score_right_body_entered(body: Node2D) -> void:
 	score[0] += 1

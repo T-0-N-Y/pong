@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djj81k5qh3db5"]
+[gd_scene load_steps=18 format=3 uid="uid://djj81k5qh3db5"]
 
 [ext_resource type="Texture2D" uid="uid://ct1bwp1h0mkj2" path="res://assets/pong_background.png" id="1_e42ov"]
 [ext_resource type="Texture2D" uid="uid://bat6xljlcjg4" path="res://assets/480073518_1375789236884207_6784987757028887989_n.jpg" id="2_ixwp5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://script/ball_real.gd" id="6_lvd7t"]
 [ext_resource type="AudioStream" uid="uid://cwg4egfgipui8" path="res://assets/drum-hitnormal.wav" id="8_tm5t1"]
 [ext_resource type="AudioStream" uid="uid://bjpirv1g6o7er" path="res://assets/ohyes.mp3" id="10_31v65"]
+[ext_resource type="AudioStream" uid="uid://yvdnif40gyro" path="res://assets/lancer-laugh.mp3" id="11_q8rd5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw1be"]
 size = Vector2(5.17678, 40.0445)
@@ -138,6 +139,9 @@ autostart = true
 
 [node name="playerScoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_31v65")
+
+[node name="CPUScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_q8rd5")
 
 [connection signal="body_entered" from="scoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="scoreRight" to="." method="_on_score_right_body_entered"]
