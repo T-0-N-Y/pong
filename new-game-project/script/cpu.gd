@@ -12,7 +12,6 @@ func _ready() -> void:
 	var sprite = $Sprite2D  # Get the Sprite2D node
 	var sprite_size = sprite.texture.get_size() * sprite.scale  # Get size considering scale 
 	pHeight = sprite_size.y
-	print("Sprite size: ", pHeight)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
